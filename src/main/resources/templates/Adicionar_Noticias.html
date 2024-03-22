@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Adicionar Noticia</title>
+</head>
+<body>
+<div>
+ <h1>Adicionar Noticia</h1>
+ <hr>
+ <form action="#" th:action="@{/Save_Noticia}" th:object="${Adicionar_Noticias}" method="POST">
+	<label for="User"><b>Topico:</b></label>
+    <input type="text" placeholder="id do Topico!" size="10" th:field="*{idTopico}" required> 
+    <br>
+    <label for="User"><b>Noticia:</b></label><br>
+    <textarea id="w3review" name="w3review" rows="4" cols="50"  th:field="*{Noticia}" required>
+
+	</textarea>
+
+ 	
+    
+    <br>
+    
+    <button type="submit" class="registerbtn">Adicionar Noticia</button>
+</form>
+ <hr>
+ <a th:href="@{/index_Publisher}"> Voltar</a>
+</div>
+</body>
+</html>

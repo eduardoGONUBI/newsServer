@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Adicionar Topico</title>
+</head>
+<body>
+<div>
+ <h1>Adicionar Topico</h1>
+ <hr>
+ <form action="#" th:action="@{/up_Topico}" th:object="${Topico}" method="POST">
+	<input type="hidden" th:field="*{id}" />
+	<label for="User"><b>Topico:</b></label>
+    <input type="text" placeholder="Topico novo!" size="15" th:field="*{Topico}" required> 
+    <br>
+    <button type="submit" class="registerbtn">Atualizar Topico</button>
+</form>
+ <hr>
+ <a th:href="@{/index_Publisher}"> Voltar</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+	.container {
+	 text-align: center;
+     position: fixed;
+  	 bottom: 0px;
+	 right: 30%;
+	 left: 30%;
+	}
+</style>
+<meta charset="ISO-8859-1">
+<title>Noticias Recentes</title>
+</head>
+<body>
+<div>
+ <h1>Noticias Recentes: </h1>
+ 
+ 
+ <table border="1" class="table table-striped table-responsive-md">
+ <thead>
+ <tr>
+ 	<th>Noticia:</th>
+ 	<th>Topico:</th>
+ </tr>
+ </thead>
+ <tbody>
+	<tr th:each="noticia :${ListaNoticias}">
+	<td th:text="${noticia.noticia}">
+	<td th:text="${noticia.topico}">
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ 
+</div>
+
+<div class="container">
+   
+
+    <a th:href="@{/showLogin}"> <b>Login</b> </a>
+    <br>
+    
+   	<a th:href="@{/Registar_User}"> <b>Registar</b> </a>
+
+
+ </div>
+
+  
+
+</body>
+</html>

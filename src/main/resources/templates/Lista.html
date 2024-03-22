@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Noticias Recentes</title>
+</head>
+<body>
+<div>
+ <h1>Noticias Recentes do Topico: </h1>
+ 
+ 
+ <table border="1" class="table table-striped table-responsive-md">
+ <thead>
+ <tr>
+ 	<th>Noticia:</th>
+ 	<th>Topico:</th>
+ </tr>
+ </thead>
+ <tbody>
+	<tr th:each="noticia :${ListaNoticiasTopico}">
+	<td th:text="${noticia.noticia}">
+	<td th:text="${noticia.topico}">
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ 
+</div>
+</body>
+</html>

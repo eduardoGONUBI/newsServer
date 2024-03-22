@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+	.Noticias {
+	
+     position: fixed;
+	 right: 0%;
+	 left: 0%;
+	}
+	.Topicos {
+		position: fixed;
+	 	right: 0%;
+	 	left: 50%;
+	}
+	}
+</style>
+
+<meta charset="ISO-8859-1">
+<title>Noticias:</title>
+</head>
+<body>
+<div class="Noticias">
+ 
+ <h1>Lista noticias:</h1>
+   
+ <a th:href="@{/Adicionar_Noticias}"> Add noticia </a>
+ <table border="1" class="table table-striped table-responsive-md">
+ <thead>
+ <tr>
+ 	<th>id</th>
+ 	<th>Noticia:</th>
+ 	<th>Topico:</th>
+  	<th>id Topico</th>
+ </tr>
+ </thead>
+ <tbody>
+	<tr th:each="noticia :${ListaNoticias}">
+	<td th:text="${noticia.id}">
+	<td th:text="${noticia.noticia}">
+	<td th:text="${noticia.topico}">
+	<td th:text="${noticia.idTopico}">
+	<td>
+		<a th:href="@{/Update_Noticia/{id}(id=${noticia.id})}"> Editar</a>
+		<a th:href="@{/delete_Noticia/{id}(id=${noticia.id})}"> Eliminar </a>
+	</td>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+</div>
+<div class="Topicos">
+<h1>Lista Topicos:</h1>
+   
+ <a th:href="@{/Adicionar_Topico}"> Add Topico</a>
+ <table border="1" class="table table-striped table-responsive-md">
+ <thead>
+ <tr>
+ 	<th>id:</th>
+ 	<th>Topico:</th>
+ </tr>
+ </thead>
+ <tbody>
+	<tr th:each="topico :${ListaTopico}">
+	<td th:text="${topico.id}">
+	<td th:text="${topico.Topico}">
+	<td>
+		<a th:href="@{/Update_Topico/{id}(id=${topico.id})}"> Editar</a>
+		<a th:href="@{/delete_Topico/{id}(id=${topico.id})}"> Eliminar </a>
+	</td>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+  
+ </div>
+
+</body>
+</html>
